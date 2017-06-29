@@ -1,0 +1,20 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title"><%= @ca.name %></h1>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>
+            <%= link_to "Server Certificates", server_certificates_path(ca_name: @ca.name) %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to "Client Certificates", client_certificates_path(ca_name: @ca.name) %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><%= link_to "Back", root_path %></p>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">Client Certificates</h1>
+    <table class="table">
+      <tbody>
+        <% @certs.each do |cert| %>
+          <tr>
+            <td>
+              <%= link_to cert.name, client_certificate_path(@ca.name, cert) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <p><%= link_to "New", new_client_certificate_path(@ca.name) %></p>
+    <p><%= link_to "Back to #{@ca.name}", certificate_authority_path(@ca.name) %></p>
+  </div>
+</section>

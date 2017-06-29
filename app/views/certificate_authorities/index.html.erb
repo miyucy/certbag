@@ -1,0 +1,17 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">Certificate Authorities</h1>
+    <table class="table">
+      <tbody>
+        <% @cas.each do |ca| %>
+          <tr>
+            <td>
+              <%= link_to ca.name, certificate_authority_path(ca.name) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <p><%= link_to "New", new_certificate_authority_path %></p>
+  </div>
+</section>

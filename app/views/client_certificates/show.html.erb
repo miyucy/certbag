@@ -1,0 +1,22 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title"><%= @cert.name %></h1>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td></td>
+          <td><%= @cert.p12.certificate.subject %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= @cert.p12.certificate.not_before.in_time_zone('Asia/Tokyo') %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= @cert.p12.certificate.not_after.in_time_zone('Asia/Tokyo') %></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><%= link_to "Back", client_certificates_path(@ca.name) %></p>
+  </div>
+</section>
